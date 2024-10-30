@@ -11,6 +11,7 @@ export default function ContactForm() {
   });
   const [errors, setErrors] = useState({});
   const [alert, setAlert] = useState({ message: "", type: "" });
+  const [isLoading, setIsLoading] = useState(false); // Estado para manejar la carga
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,6 +34,7 @@ export default function ContactForm() {
     e.preventDefault();
     if (!validateForm()) return;
 
+    setIsLoading(true); // Establecer estado de carga en true al enviar
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_API_URL}/contact`, // Conecta solo a /teacher
@@ -51,11 +53,13 @@ export default function ContactForm() {
         type: "error",
       });
       console.error("Error al enviar el mensaje:", error);
+    } finally {
+      setIsLoading(false); // Establecer estado de carga en false al finalizar
     }
   };
 
   return (
-    <div className="mt-2 md:mt-14">
+    <div className=" mt-14 ">
       <div className="min-h-screen bg-gray-200 flex items-center justify-center flex-col p-4">
         <h1 className="text-4xl md:text-5xl font-bold text-center bg-clip-text mb-6 text-blue-900">
           ¿Tienes dudas o preguntas?
@@ -123,9 +127,12 @@ export default function ContactForm() {
             <div className="flex items-center justify-end">
               <button
                 type="submit"
-                className="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 text-sm"
+                disabled={isLoading} // Deshabilitar botón mientras está cargando
+                className={`${
+                  isLoading ? "bg-blue-300" : "bg-blue-500"
+                } text-white font-bold py-2 px-4 rounded-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 text-sm`}
               >
-                Enviar Mensaje
+                {isLoading ? "Enviando..." : "Enviar Mensaje"}
               </button>
             </div>
           </form>

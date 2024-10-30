@@ -74,7 +74,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Section */}
           <div>
             <h4 className="mb-6 text-lg font-semibold text-white">Contacto</h4>
             <ul className="space-y-4">
@@ -92,7 +91,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Navigation Section */}
           <div>
             <h4 className="mb-6 text-lg font-semibold text-white">
               Navegación

@@ -44,10 +44,12 @@ export default function Navbar() {
         scrollY > 0 ? "bg-blue-900" : "bg-transparent"
       } text-white flex justify-between items-center lg:px-[2%]`}
     >
-      <div className="h-full flex items-center gap-2 px-4">
-        <img src={presys} className="w-10" />
-        <h4 className={"font-black text-2xl uppercase "}>Presys</h4>
-      </div>
+      <a href="/">
+        <div className="h-full flex items-center gap-2 px-4">
+          <img src={presys} className="w-10" />
+          <h4 className={"font-black text-2xl uppercase "}>Presys</h4>
+        </div>
+      </a>
 
       <button
         onClick={toggleMenu}

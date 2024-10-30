@@ -18,6 +18,7 @@ export default function TeacherForm() {
   const [errors, setErrors] = useState({});
   const [dragActive, setDragActive] = useState(false);
   const [alert, setAlert] = useState({ message: "", type: "" });
+  const [loading, setLoading] = useState(false); // Estado de carga
   const fileInputRef = useRef(null);
 
   const handleChange = (e) => {
@@ -53,7 +54,7 @@ export default function TeacherForm() {
 
       if (acceptedTypes.includes(file.type)) {
         setFormData((prev) => ({ ...prev, cv: file }));
-        setErrors((prev) => ({ ...prev, cv: "" })); // Limpia errores si el archivo es válido
+        setErrors((prev) => ({ ...prev, cv: "" }));
       } else {
         setErrors((prev) => ({
           ...prev,
@@ -76,6 +77,7 @@ export default function TeacherForm() {
     e.preventDefault();
     if (!validateForm()) return;
 
+    setLoading(true); // Activa el estado de carga
     const formDataObject = new FormData();
     Object.keys(formData).forEach((key) => {
       formDataObject.append(key, formData[key]);
@@ -83,7 +85,7 @@ export default function TeacherForm() {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/teacher`, // Usa la variable de entorno
+        `${import.meta.env.VITE_API_URL}/teacher`,
         formDataObject,
         {
           headers: {
@@ -99,6 +101,8 @@ export default function TeacherForm() {
         type: "error",
       });
       console.error("Error al enviar el correo:", error);
+    } finally {
+      setLoading(false); // Desactiva el estado de carga
     }
   };
 
@@ -171,7 +175,7 @@ export default function TeacherForm() {
                 id="cv"
                 name="cv"
                 ref={fileInputRef}
-                accept=".pdf, .docx" // Acepta tanto .pdf como .docx
+                accept=".pdf, .docx"
                 onChange={(e) => handleFiles(e.target.files)}
                 className="hidden"
                 required
@@ -205,9 +209,12 @@ export default function TeacherForm() {
             <div className="flex items-center justify-end">
               <button
                 type="submit"
-                className="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 text-sm"
+                disabled={loading}
+                className={`bg-blue-500 text-white font-bold py-2 px-4 rounded-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 text-sm ${
+                  loading ? "opacity-50 cursor-not-allowed" : ""
+                }`}
               >
-                Enviar Mensaje
+                {loading ? "Enviando..." : "Enviar Mensaje"}
               </button>
             </div>
           </form>
