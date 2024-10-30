@@ -20,7 +20,7 @@ export default function Footer() {
     {
       icon: Phone,
       text: "+1 (829) 766-1777",
-      href: "tel:+8297661777",
+      href: "tel:+18297661777",
     },
     {
       icon: Mail,
