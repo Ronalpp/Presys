@@ -35,7 +35,7 @@ export default function Info() {
                 <div className="md:flex">
                   <div className="md:flex-shrink-0 relative h-64 md:h-auto md:w-1/3">
                     <img
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover  rounded-2xl"
                       src={section.image}
                       alt={section.title}
                     />
