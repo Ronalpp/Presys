@@ -44,7 +44,7 @@ export default function ContactForm() {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/contact`,
+        "http://localhost:3008/contact", // Cambiar al endpoint de Express
         formData,
         {
           headers: {
@@ -53,12 +53,30 @@ export default function ContactForm() {
         }
       );
       setAlert({ message: "Mensaje enviado con éxito", type: "success" });
-      console.log("Mensaje enviado con éxito:", response.data);
     } catch (error) {
-      setAlert({
-        message: "Error al enviar el mensaje. Inténtalo nuevamente.",
-        type: "error",
-      });
+      if (error.response) {
+        // El servidor respondió con un código de error
+        setAlert({
+          message: `Error: ${
+            error.response.data.message ||
+            "Error al enviar el mensaje. Inténtalo nuevamente."
+          }`,
+          type: "error",
+        });
+      } else if (error.request) {
+        // La solicitud fue hecha pero no hubo respuesta
+        setAlert({
+          message:
+            "No se recibió respuesta del servidor. Verifica si está corriendo.",
+          type: "error",
+        });
+      } else {
+        // Algo pasó al configurar la solicitud
+        setAlert({
+          message: "Error al enviar el mensaje. Inténtalo nuevamente.",
+          type: "error",
+        });
+      }
       console.error("Error al enviar el mensaje:", error);
     } finally {
       setIsLoading(false);
@@ -66,16 +84,16 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="flex h-full bg-white  md:mt-14 mt-8 ">
-      <div className="w-1/2 hidden lg:block ">
+    <div className="flex h-full bg-white md:mt-14 mt-8">
+      <div className="w-1/2 hidden lg:block">
         <img
           src="https://imgs.search.brave.com/BlilFrALn28MpPm5Pnf5BBZam6jfrPcdhQ3wVSxHztc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTIx/NzIzNDc4NS9lcy9m/b3RvL2ltYWdlbi1n/ZW5lcmFkYS1wb3It/b3JkZW5hZG9yLWRl/LXNpbGwlQzMlQjNu/LWVuLWxhLXNhbGEt/ZGUtZXN0YXIuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPWlC/dEJGNmNUNVBmOUxM/Z2ZqSU4tVGtuNEJW/VlZGMl9reGdhTWNG/RnZQOGM9"
           alt="Contact Us"
-          className=" h-screen w-full"
+          className="h-screen w-full"
         />
       </div>
-      <div className="w-full h-screen sm:h-auto md:w-1/2 flex items-center justify-center p-8  overflow-hidden">
-        <div className="w-full  rounded-3xl p-8 ">
+      <div className="w-full h-screen sm:h-auto md:w-1/2 flex items-center justify-center p-8 overflow-hidden">
+        <div className="w-full rounded-3xl p-8">
           <h1 className="text-4xl font-extrabold mb-8 text-indigo-800 text-center">
             ¿Tienes dudas o preguntas?
           </h1>
