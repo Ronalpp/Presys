@@ -6,7 +6,7 @@ export default function About() {
           <div className="md:h-full flex flex-col md:justify-between p-4">
             <div className="flex flex-col gap-4">
               <h4 className="text-xl font-semibold text-orange-500">
-                How It Started
+                Conócenos
               </h4>
               <p
                 className="2xl:text-8xl font-black mb-8 md:mb-8"
@@ -15,7 +15,7 @@ export default function About() {
                   lineHeight: "clamp(1.5rem, 5vw, 4rem )",
                 }}
               >
-                Our Dream is Global Learning Transformation
+                Practical English System (Presys)
               </p>
             </div>
 
@@ -46,20 +46,20 @@ export default function About() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="bg-white h-2/5 grid grid-cols-2 gap-4 p-4 rounded-2xl border">
-            <article className="bg-black/5 flex flex-col xl:gap-y-4 justify-center px-4 xl:px-8 rounded-2xl">
-              <h4 className="font-bold text-3xl">+3.5</h4>
+          <div className="bg-white h-2/5 grid grid-cols-2 gap-4 p-4 rounded-2xl border leading-[2]">
+            <article className="bg-black/5 flex flex-col xl:gap-y-4 justify-center items-center px-4 xl:px-8 rounded-2xl">
+              <h4 className="font-bold text-3xl ">+3.5</h4>
               <p className="text-base font-normal">Years Experience</p>
             </article>
-            <article className="bg-black/5 flex flex-col xl:gap-y-4 justify-center px-4 xl:px-8 rounded-2xl">
+            <article className="bg-black/5 flex flex-col xl:gap-y-4 justify-center items-center px-4 xl:px-8 rounded-2xl">
               <h4 className="font-bold text-3xl">+23</h4>
               <p>Project Challenge</p>
             </article>
-            <article className="bg-black/5 flex flex-col xl:gap-y-4 justify-center px-4 xl:px-8 rounded-2xl">
+            <article className="bg-black/5 flex flex-col xl:gap-y-4 justify-center items-center px-4 xl:px-8 rounded-2xl">
               <h4 className="font-bold text-3xl">+830</h4>
               <p>Positive Reviews</p>
             </article>
-            <article className="bg-black/5 flex flex-col xl:gap-y-4 justify-center px-4 xl:px-8 rounded-2xl">
+            <article className="bg-black/5 flex flex-col xl:gap-y-4 justify-center items-center px-4 xl:px-8 rounded-2xl">
               <h4 className="font-bold text-3xl">+200</h4>
               <p>Trusted Students</p>
             </article>
