@@ -6,15 +6,18 @@ import {
   FaUser,
   FaEnvelope,
   FaPhone,
+  FaMapMarkerAlt,
+  FaBirthdayCake,
 } from "react-icons/fa";
 import axios from "axios";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
-    email: "",
     fullName: "",
+    email: "",
     phoneNumber: "",
-    message: "",
+    ageRange: "",
+    location: "",
   });
   const [errors, setErrors] = useState({});
   const [alert, setAlert] = useState({ message: "", type: "" });
@@ -44,7 +47,7 @@ export default function ContactForm() {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/contact`,
+        `${import.meta.env.VITE_API_URL}/inscriptions`,
         formData,
         {
           headers: {
@@ -53,43 +56,41 @@ export default function ContactForm() {
         }
       );
 
-      if (response.status === 200) {
-        setAlert({ message: "Mensaje enviado con éxito", type: "success" });
+      if (response.data.message) {
+        setAlert({ message: response.data.message, type: "success" });
         setFormData({
-          email: "",
           fullName: "",
+          email: "",
           phoneNumber: "",
-          message: "",
+          ageRange: "",
+          location: "",
         });
       } else {
-        throw new Error("Error inesperado en la respuesta del servidor");
+        setAlert({
+          message: response.data.error || "Error al enviar el mensaje.",
+          type: "error",
+        });
       }
     } catch (error) {
-      if (error.response) {
-        setAlert({
-          message: `Error: ${
-            error.response.data.message ||
-            "Error al enviar el mensaje. Inténtalo nuevamente."
-          }`,
-          type: "error",
-        });
-      } else if (error.request) {
-        setAlert({
-          message:
-            "No se recibió respuesta del servidor. Verifica si está corriendo.",
-          type: "error",
-        });
-      } else {
-        setAlert({
-          message: "Error al enviar el mensaje. Inténtalo nuevamente.",
-          type: "error",
-        });
-      }
+      setAlert({
+        message: "Error al enviar el mensaje. Inténtalo nuevamente.",
+        type: "error",
+      });
       console.error("Error al enviar el mensaje:", error);
     } finally {
       setIsLoading(false);
     }
   };
+
+  const ageRanges = [
+    "7-12 años",
+    "13-17 años",
+    "18-25 años",
+    "26-35 años",
+    "36-45 años",
+    "46-55 años",
+    "56+ años",
+  ];
 
   return (
     <div className="flex h-full bg-white md:mt-14 mt-8">
@@ -97,13 +98,13 @@ export default function ContactForm() {
         <img
           src="https://imgs.search.brave.com/BlilFrALn28MpPm5Pnf5BBZam6jfrPcdhQ3wVSxHztc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTIx/NzIzNDc4NS9lcy9m/b3RvL2ltYWdlbi1n/ZW5lcmFkYS1wb3It/b3JkZW5hZG9yLWRl/LXNpbGwlQzMlQjNu/LWVuLWxhLXNhbGEt/ZGUtZXN0YXIuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPWlC/dEJGNmNUNVBmOUxM/Z2ZqSU4tVGtuNEJW/VlZGMl9reGdhTWNG/RnZQOGM9"
           alt="Contact Us"
-          className="h-auto w-full"
+          className="h-auto w-full object-cover"
         />
       </div>
       <div className="w-full h-screen sm:h-auto md:w-1/2 flex items-center justify-center p-8 overflow-hidden">
         <div className="w-full rounded-3xl p-8">
           <h1 className="text-4xl font-extrabold mb-8 text-indigo-800 text-center">
-            ¿Tienes dudas o preguntas?
+            ¡Inscríbete ya!
           </h1>
           {alert.message && (
             <div
@@ -162,18 +163,44 @@ export default function ContactForm() {
               </div>
             ))}
             <div className="relative">
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Mensaje"
-                value={formData.message}
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-indigo-500">
+                <FaBirthdayCake />
+              </div>
+              <select
+                id="ageRange"
+                name="ageRange"
+                value={formData.ageRange}
                 onChange={handleChange}
-                rows="4"
-                className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300"
+                className="w-full pl-10 pr-4 py-3 text-gray-700 bg-gray-100 border-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300"
                 required
-              ></textarea>
-              {errors.message && (
-                <p className="text-red-500 text-xs mt-1">{errors.message}</p>
+              >
+                <option value="">Selecciona tu rango de edad</option>
+                {ageRanges.map((range) => (
+                  <option key={range} value={range}>
+                    {range}
+                  </option>
+                ))}
+              </select>
+              {errors.ageRange && (
+                <p className="text-red-500 text-xs mt-1">{errors.ageRange}</p>
+              )}
+            </div>
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-indigo-500">
+                <FaMapMarkerAlt />
+              </div>
+              <input
+                type="text"
+                id="location"
+                name="location"
+                placeholder="Ubicación"
+                value={formData.location}
+                onChange={handleChange}
+                className="w-full pl-10 pr-4 py-3 text-gray-700 bg-gray-100 border-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300"
+                required
+              />
+              {errors.location && (
+                <p className="text-red-500 text-xs mt-1">{errors.location}</p>
               )}
             </div>
             <div className="flex items-center justify-center">
@@ -191,7 +218,7 @@ export default function ContactForm() {
                 ) : (
                   <>
                     <FaPaperPlane className="mr-2" />
-                    Enviar Mensaje
+                    Enviar
                   </>
                 )}
               </button>

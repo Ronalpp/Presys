@@ -22,7 +22,7 @@ export default function Navbar() {
     { name: "Clases", href: "/course", icon: BookOpen },
     { name: "Nosotros", href: "/about", icon: Users },
     { name: "Conviértete en profesor", href: "/teacher", icon: User },
-    { name: "¡Inscríbete ya!", href: "", icon: SquarePen },
+    { name: "¡Inscríbete ya!", href: "/inscriptions", icon: SquarePen },
   ];
 
   return (
