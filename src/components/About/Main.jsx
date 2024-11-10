@@ -15,7 +15,7 @@ export default function Main() {
   return (
     <>
       <div
-        className="w-full h-[80vh] lg:h-[80vh] sm:h-[50vh] bg-gray-100 flex flex-col"
+        className="w-full h-[50vh] md:h-[70vh]  lg:h-[80vh] sm:h-[80vh] bg-gray-100 flex flex-col"
         style={{
           backgroundImage:
             'url("https://elcomercio.pe/resizer/8IFfNwYUBvXeiGKAthwJpwVbpkU=/980x528/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/UI7DZEAMURHMVF5RTIRM4YJKPM.jpg")',

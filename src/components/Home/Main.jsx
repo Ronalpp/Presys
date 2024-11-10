@@ -26,7 +26,7 @@ export default function Main() {
 
   return (
     <>
-      <div className="w-full h-[70vh] lg:h-[80vh] sm:h-[50vh] bg-gray-100 flex flex-col justify-center items-center relative overflow-hidden">
+      <div className="w-full h-[50vh] md:h-[70vh]  lg:h-[80vh] sm:h-[80vh] bg-gray-100 flex flex-col justify-center items-center relative overflow-hidden">
         {/* Video de fondo */}
         <video
           autoPlay
