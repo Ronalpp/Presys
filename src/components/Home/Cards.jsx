@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { courses } from "../../constants/db/Data";
+import { courses } from "../../constants/db/courses";
 import { ChevronRight } from "lucide-react";
 
 export default function Component() {
@@ -43,7 +43,10 @@ export default function Component() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Learn More <ChevronRight className="ml-2 w-5 h-5" />
+              <a href={`/info/${course.slug}`} className="flex items-center">
+                Learn More
+                <ChevronRight className="ml-2 w-5 h-5" />
+              </a>
             </motion.button>
           </motion.div>
         ))}

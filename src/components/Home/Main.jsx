@@ -48,7 +48,7 @@ https://firebasestorage.googleapis.com/v0/b/pepe-cd754.appspot.com/o/2024-10-24%
             className="relative z-10 container mx-auto px-6 pt-32 pb-20 text-center md:pt-40"
           >
             <motion.h1
-              className="text-6xl font-extrabold text-white md:text-6xl mb-6 reveal-bottom"
+              className="text-4xl font-extrabold text-white md:text-6xl mb-6 reveal-bottom"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -62,7 +62,7 @@ https://firebasestorage.googleapis.com/v0/b/pepe-cd754.appspot.com/o/2024-10-24%
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <a
-                href="#"
+                href="/inscriptions"
                 className="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-500 transition duration-300 text-lg"
               >
                 Comienza tu viaje

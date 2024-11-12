@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Teacher from "./pages/Teacher";
 import InfoDetails from "./pages/InfoDetails";
+import InfoCourse from "./pages/InfoCourse";
 import Inscription from "./pages/Inscription";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/teacher" element={<Teacher />} />
         <Route path="/:slug" element={<InfoDetails />} />
+        <Route path="/info/:slug" element={<InfoCourse />} />
         <Route path="/inscriptions" element={<Inscription />} />
       </Routes>
     </BrowserRouter>

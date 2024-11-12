@@ -43,15 +43,13 @@ export default function ContactForm() {
 
     setIsLoading(true);
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/contact`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const apiUrl =
+        import.meta.env.VITE_API_URL || "https://backendsfs.vercel.app"; // Fallback URL for development
+      const response = await axios.post(`${apiUrl}/contact`, formData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
       if (response.status === 200) {
         setAlert({ message: "Mensaje enviado con éxito", type: "success" });
@@ -65,26 +63,14 @@ export default function ContactForm() {
         throw new Error("Error inesperado en la respuesta del servidor");
       }
     } catch (error) {
+      let message = "Error al enviar el mensaje. Inténtalo nuevamente.";
       if (error.response) {
-        setAlert({
-          message: `Error: ${
-            error.response.data.message ||
-            "Error al enviar el mensaje. Inténtalo nuevamente."
-          }`,
-          type: "error",
-        });
+        message = error.response.data.message || message;
       } else if (error.request) {
-        setAlert({
-          message:
-            "No se recibió respuesta del servidor. Verifica si está corriendo.",
-          type: "error",
-        });
-      } else {
-        setAlert({
-          message: "Error al enviar el mensaje. Inténtalo nuevamente.",
-          type: "error",
-        });
+        message =
+          "No se recibió respuesta del servidor. Verifica si está corriendo.";
       }
+      setAlert({ message, type: "error" });
       console.error("Error al enviar el mensaje:", error);
     } finally {
       setIsLoading(false);
@@ -92,16 +78,16 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="flex h-full bg-white mt-4 md:mt-14 xl:mt-8">
-      <div className="w-1/2 hidden lg:block">
+    <div className="flex flex-col lg:flex-row h-full bg-white mt-4 md:mt-14 xl:mt-8">
+      <div className="hidden lg:block lg:w-1/2">
         <img
           src="https://imgs.search.brave.com/BlilFrALn28MpPm5Pnf5BBZam6jfrPcdhQ3wVSxHztc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTIx/NzIzNDc4NS9lcy9m/b3RvL2ltYWdlbi1n/ZW5lcmFkYS1wb3It/b3JkZW5hZG9yLWRl/LXNpbGwlQzMlQjNu/LWVuLWxhLXNhbGEt/ZGUtZXN0YXIuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPWlC/dEJGNmNUNVBmOUxM/Z2ZqSU4tVGtuNEJW/VlZGMl9reGdhTWNG/RnZQOGM9"
           alt="Contact Us"
           className="h-auto w-full"
         />
       </div>
-      <div className="w-full h-screen sm:h-auto md:w-1/2 flex items-center justify-center p-8 overflow-hidden">
-        <div className="w-full rounded-3xl p-8">
+      <div className="w-full h-full flex items-center justify-center p-8 lg:w-1/2">
+        <div className="w-full max-w-lg rounded-3xl p-8 shadow-md bg-white">
           <h1 className="text-4xl font-extrabold mb-8 text-indigo-800 text-center">
             ¿Tienes dudas o preguntas?
           </h1>
@@ -109,7 +95,7 @@ export default function ContactForm() {
             <div
               className={`mb-6 p-4 rounded-lg text-white flex items-center justify-center ${
                 alert.type === "success" ? "bg-green-500" : "bg-red-500"
-              } transition-all duration-300 animate-pulse`}
+              } transition-all duration-300`}
             >
               {alert.type === "success" ? (
                 <FaCheckCircle className="mr-2" />
@@ -151,7 +137,7 @@ export default function ContactForm() {
                   placeholder={field.label}
                   value={formData[field.name]}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 text-gray-700 bg-gray-100 border-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300"
+                  className="w-full pl-10 pr-4 py-3 text-gray-700 bg-gray-100 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   required
                 />
                 {errors[field.name] && (
@@ -169,7 +155,7 @@ export default function ContactForm() {
                 value={formData.message}
                 onChange={handleChange}
                 rows="4"
-                className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300"
+                className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 required
               ></textarea>
               {errors.message && (
@@ -184,7 +170,7 @@ export default function ContactForm() {
                   isLoading
                     ? "bg-indigo-400"
                     : "bg-indigo-600 hover:bg-indigo-700"
-                } text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 flex items-center justify-center w-full`}
+                } text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 w-full`}
               >
                 {isLoading ? (
                   "Enviando..."
