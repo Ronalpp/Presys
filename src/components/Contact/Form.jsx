@@ -87,7 +87,7 @@ export default function ContactForm() {
         />
       </div>
       <div className="w-full h-full flex items-center justify-center p-8 lg:w-1/2">
-        <div className="w-full max-w-lg rounded-3xl p-8 shadow-md bg-white">
+        <div className="w-full max-w-lg rounded-3xl p-8  bg-white">
           <h1 className="text-4xl font-extrabold mb-8 text-indigo-800 text-center">
             ¿Tienes dudas o preguntas?
           </h1>
@@ -170,7 +170,7 @@ export default function ContactForm() {
                   isLoading
                     ? "bg-indigo-400"
                     : "bg-indigo-600 hover:bg-indigo-700"
-                } text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 w-full`}
+                } text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 flex items-center justify-center w-full`}
               >
                 {isLoading ? (
                   "Enviando..."

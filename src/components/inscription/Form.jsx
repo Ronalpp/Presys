@@ -83,7 +83,7 @@ export default function ContactForm() {
   };
 
   const ageRanges = [
-    "7-12 años",
+    "8-12 años",
     "13-17 años",
     "18-25 años",
     "26-35 años",

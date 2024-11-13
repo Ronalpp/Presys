@@ -65,7 +65,7 @@ https://firebasestorage.googleapis.com/v0/b/pepe-cd754.appspot.com/o/2024-10-24%
                 href="/inscriptions"
                 className="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-500 transition duration-300 text-lg"
               >
-                Comienza tu viaje
+                ¡Inscríbete ya!{" "}
               </a>
             </motion.div>
           </div>

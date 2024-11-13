@@ -1,20 +1,9 @@
 import React from "react";
-import {
-  Instagram,
-  Linkedin,
-  Twitter,
-  Phone,
-  Mail,
-  MapPin,
-} from "lucide-react";
-import Logo from "../assets/presys.png";
+import { Instagram, Phone, Mail, MapPin } from "lucide-react";
+import logo from "../assets/presys.png";
 
 export default function Footer() {
-  const socialLinks = [
-    { icon: Instagram, href: "/" },
-    { icon: Linkedin, href: "/" },
-    { icon: Twitter, href: "/" },
-  ];
+  const socialLinks = [{ icon: Instagram, href: "/", name: "Instagram" }];
 
   const contactInfo = [
     {
@@ -33,7 +22,6 @@ export default function Footer() {
       href: "https://maps.app.goo.gl/1eXqqNr2ZxEoHd7V8",
     },
   ];
-  1;
 
   const navLinks = [
     { text: "Inicio", href: "/" },
@@ -49,29 +37,38 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col items-center gap-3">
             <a href="/" className="inline-block">
-              <img src={Logo} alt="Presys Logo" className="w-16" />
+              <img src={logo} alt="Presys Logo" className="w-16 h-16" />
             </a>
             <h1 className="text-4xl font-black uppercase text-white">Presys</h1>
             <p className="text-gray-300 text-center">
               Somos un centro educativo comprometido con la excelencia en la
-              enseñanza del ingles.
+              enseñanza del inglés.
             </p>
           </div>
-          {/* Social Media Section */}
-          <div className="flex items-center">
-            <ul className="flex space-x-6">
-              {socialLinks.map((social, index) => (
-                <li key={index}>
-                  <a
-                    href={social.href}
-                    className="block transition-colors hover:text-white"
-                    aria-label={`Visit our ${social.icon.name}`}
-                  >
-                    <social.icon className="h-7 w-7 text-gray-300 transition-colors hover:text-white" />
-                  </a>
-                </li>
-              ))}
-            </ul>
+
+          <div className="flex flex-col  w-full">
+            <h4 className="mb-6 text-lg font-semibold items-start text-white">
+              Síguenos en:
+            </h4>
+            <div className="flex flex-row justify-center items-center space-x-4 mb-6">
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center w-12 h-12 rounded-full bg-white bg-opacity-20 transition-all duration-300 hover:bg-opacity-100 hover:scale-110"
+                aria-label="Síguenos en Instagram"
+              >
+                <Instagram className="h-7 w-7 text-white group-hover:text-blue-900 transition-colors duration-300" />
+              </a>
+            </div>
+            <div className="text-center max-w-xs">
+              <p className="text-white text-sm font-medium mb-2">
+                Mantente conectado con nosotros
+              </p>
+              <p className="text-gray-300 text-xs">
+                Recibe noticias y participa en encuestas para nuestra comunidad.
+              </p>
+            </div>
           </div>
 
           <div>
@@ -81,16 +78,15 @@ export default function Footer() {
                 <li key={index}>
                   <a
                     href={info.href}
-                    className="flex items-center gap-2 text-ls text-gray-300 transition-colors hover:text-white"
+                    className="flex items-center gap-2 text-ls text-gray-300 transition-colors hover:text-white group"
                   >
-                    <info.icon className="h-5 w-5" />
-                    <span>{info.text}</span>
+                    <info.icon className="h-5 w-5 transition-transform group-hover:scale-110" />
+                    <span className="group-hover:underline">{info.text}</span>
                   </a>
                 </li>
               ))}
             </ul>
           </div>
-
           <div>
             <h4 className="mb-6 text-lg font-semibold text-white">
               Navegación
@@ -100,7 +96,7 @@ export default function Footer() {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-ls text-gray-300 transition-colors hover:text-white"
+                    className="text-ls text-gray-300 transition-colors hover:text-white hover:underline"
                   >
                     {link.text}
                   </a>
@@ -110,7 +106,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="mt-10 text-ls text-gray-300">
+        <p className="mt-10 text-ls text-gray-300 text-center">
           © {new Date().getFullYear()} Presys. Todos los derechos reservados.
         </p>
       </div>

@@ -7,7 +7,6 @@ import {
   FaEnvelope,
   FaPhone,
   FaFileUpload,
-  FaIdCard,
 } from "react-icons/fa";
 import axios from "axios";
 
@@ -15,7 +14,6 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     email: "",
     fullName: "",
-    idNumber: "",
     phoneNumber: "",
     message: "",
     cv: null,
@@ -153,12 +151,7 @@ export default function ContactForm() {
                 label: "Correo Electrónico",
                 icon: <FaEnvelope />,
               },
-              {
-                name: "idNumber",
-                type: "text",
-                label: "Número de Cedula",
-                icon: <FaIdCard />,
-              },
+
               {
                 name: "phoneNumber",
                 type: "tel",
@@ -255,7 +248,7 @@ export default function ContactForm() {
                 ) : (
                   <>
                     <FaPaperPlane className="mr-2" />
-                    Enviar Mensaje
+                    Enviar CV
                   </>
                 )}
               </button>
