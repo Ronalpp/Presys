@@ -1,9 +1,4 @@
 import { useEffect } from "react";
-import {
-  revealFromRight,
-  revealFromLeft,
-  revealFromBottom,
-} from "../../constants/variants";
 import { motion } from "framer-motion";
 
 const MotionSection = ({ children, delay = 0 }) => (
@@ -18,16 +13,9 @@ const MotionSection = ({ children, delay = 0 }) => (
 );
 
 export default function Main() {
-  useEffect(() => {
-    revealFromBottom(".reveal-bottom");
-    revealFromLeft(".reveal-left");
-    revealFromRight(".reveal-right");
-  }, []);
-
   return (
     <>
       <div className="w-full h-[50vh] md:h-[70vh]  lg:h-[80vh] sm:h-[80vh] bg-gray-100 flex flex-col justify-center items-center relative overflow-hidden">
-        {/* Video de fondo */}
         <video
           autoPlay
           loop
@@ -48,12 +36,12 @@ https://firebasestorage.googleapis.com/v0/b/pepe-cd754.appspot.com/o/2024-10-24%
             className="relative z-10 container mx-auto px-6 pt-32 pb-20 text-center md:pt-40"
           >
             <motion.h1
-              className="text-4xl font-extrabold text-white md:text-6xl mb-6 reveal-bottom"
-              initial={{ opacity: 0, y: -50 }}
+              className="text-4xl font-extrabold text-white md:text-6xl mb-6 "
+              initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6 }}
             >
-              Domina el inglés y<br />
+              Domina el inglés <br />
               abre puertas al mundo
             </motion.h1>
             <motion.div
@@ -65,7 +53,7 @@ https://firebasestorage.googleapis.com/v0/b/pepe-cd754.appspot.com/o/2024-10-24%
                 href="/inscriptions"
                 className="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-500 transition duration-300 text-lg"
               >
-                ¡Inscríbete ya!{" "}
+                ¡Inscríbete ya!
               </a>
             </motion.div>
           </div>

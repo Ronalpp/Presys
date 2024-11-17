@@ -20,7 +20,7 @@ export default function Info() {
           </p>
         </motion.header>
 
-        <div className="space-y-12">
+        <div className="space-y-12 ">
           {learningData.map((section, index) => (
             <motion.div
               key={section.title}

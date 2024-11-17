@@ -13,7 +13,7 @@ export default function Footer() {
     },
     {
       icon: Mail,
-      text: "emailspresys@gmail.com",
+      text: "presys2023@gmail.com",
       href: "mailto:emailspresys@gmail.com",
     },
     {

@@ -23,7 +23,7 @@ export default function Component() {
         {courses.map((course, index) => (
           <motion.div
             key={index}
-            className={`${course.color} ${course.hover} rounded-xl p-6 flex flex-col items-center text-center shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-2`}
+            className={`${course.color} ${course.hover} rounded-xl p-6 flex flex-col items-center text-center shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-2 reveal-left`}
             whileHover={{ scale: 1.03 }}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}

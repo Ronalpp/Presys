@@ -14,7 +14,7 @@ export default function Maps() {
       label: "Dirección",
       value: "Plaza Nica, Santo Domingo, República Dominicana",
     },
-    { icon: <FaEnvelope />, label: "Correo", value: "emailspresys@gmail.com" },
+    { icon: <FaEnvelope />, label: "Correo", value: "presys2023@gmail.com" },
     {
       icon: <FaClock />,
       label: "Horario",
