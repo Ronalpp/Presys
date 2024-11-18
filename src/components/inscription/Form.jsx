@@ -96,7 +96,7 @@ export default function ContactForm() {
     "Lunes, Miércoles y Viernes de 7-9 PM (intensivo)",
     "Lunes, Miércoles y Viernes de 6-7 PM (14 años en adelante y adultos)",
     "Lunes y Miércoles de 9-11 AM (jóvenes y adultos)",
-    "Sábados de 3-6 PM (Niños de 7 años en adelante)",
+    "Sábados de 9-12 PM (Niños de 7 años en adelante)",
     "Sábados de 3-6 PM (Jóvenes y adultos)",
     "OTRO HORARIO",
   ];
