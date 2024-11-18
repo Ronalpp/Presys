@@ -28,7 +28,7 @@ export default function Footer() {
     { text: "Clases", href: "/course" },
     { text: "Nosotros", href: "/about" },
     { text: "Conviertete en profesor", href: "/teacher" },
-    { text: "¡Inscríbete ya!", href: "/" },
+    { text: "¡Inscríbete ya!", href: "/inscriptions" },
   ];
 
   return (
