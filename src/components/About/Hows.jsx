@@ -2,7 +2,7 @@ export default function About() {
   return (
     <section className="w-full flex justify-center items-center py-12 md:px-4 xl:px-[5%] 2xl:px-[10%]">
       <div className="w-full h-full grid md:grid-cols-2 gap-4 p-4">
-        <article className="md:h-full bg-white p-2 rounded-2xl border">
+        <article className="md:h-full bg-white p-2 rounded-2xl ">
           <div className="md:h-full flex flex-col md:justify-between p-4">
             <div className="flex flex-col gap-4">
               <h4 className="text-xl font-semibold text-orange-500">
@@ -46,7 +46,7 @@ export default function About() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="bg-white h-2/5 grid grid-cols-2 gap-4 p-4 rounded-2xl border">
+          <div className="bg-white h-2/5 grid grid-cols-2 gap-4 p-4 rounded-2xl ">
             <article className="bg-black/5 flex flex-col xl:gap-y-4 justify-center px-4 xl:px-8 rounded-2xl">
               <h4 className="font-bold text-3xl">+3.5</h4>
               <p className="text-base font-normal">Years Experience</p>

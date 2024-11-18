@@ -52,7 +52,7 @@ export default function Footer() {
             </h4>
             <div className="flex flex-row justify-center items-center space-x-4 mb-6">
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/practicalenglishsystem/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center w-12 h-12 rounded-full bg-white bg-opacity-20 transition-all duration-300 hover:bg-opacity-100 hover:scale-110"
@@ -61,10 +61,7 @@ export default function Footer() {
                 <Instagram className="h-7 w-7 text-white group-hover:text-blue-900 transition-colors duration-300" />
               </a>
             </div>
-            <div className="text-center max-w-xs">
-              <p className="text-white text-sm font-medium mb-2">
-                Mantente conectado con nosotros
-              </p>
+            <div className="flex items-center justify-center text-center max-w-xs">
               <p className="text-gray-300 text-xs">
                 Recibe noticias y participa en encuestas para nuestra comunidad.
               </p>

@@ -23,7 +23,7 @@ export default function Maps() {
   ];
 
   return (
-    <div className="w-full py-10 px-4 md:px-8 xl:px-[5%] 2xl:px-[10%] ">
+    <div className="w-full py-12 px-4 md:px-8 xl:px-[5%] 2xl:px-[10%] ">
       <h1 className="text-5xl font-bold text-center text-blue-900 mb-12">
         Encuéntranos
       </h1>
