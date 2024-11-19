@@ -78,7 +78,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row h-full bg-white mt-4 md:mt-14 xl:mt-8">
+    <div className="flex flex-col lg:flex-row h-full bg-white mt-2 md:mt-8 xl:mt-4">
       <div className="hidden lg:block lg:w-1/2">
         <img
           src="https://imgs.search.brave.com/BlilFrALn28MpPm5Pnf5BBZam6jfrPcdhQ3wVSxHztc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTIx/NzIzNDc4NS9lcy9m/b3RvL2ltYWdlbi1n/ZW5lcmFkYS1wb3It/b3JkZW5hZG9yLWRl/LXNpbGwlQzMlQjNu/LWVuLWxhLXNhbGEt/ZGUtZXN0YXIuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPWlC/dEJGNmNUNVBmOUxM/Z2ZqSU4tVGtuNEJW/VlZGMl9reGdhTWNG/RnZQOGM9"
@@ -86,8 +86,8 @@ export default function ContactForm() {
           className="h-auto w-full"
         />
       </div>
-      <div className="w-full h-full flex items-center justify-center p-8 lg:w-1/2">
-        <div className="w-full max-w-lg rounded-3xl p-8  bg-white">
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-4 sm:p-8 overflow-y-auto">
+        <div className="w-full max-w-md rounded-3xl p-1 pt-16 sm:p-2 sm:pt-12">
           <h1 className="text-4xl font-extrabold mb-8 text-indigo-800 text-center">
             ¿Tienes dudas o preguntas?
           </h1>
@@ -137,7 +137,7 @@ export default function ContactForm() {
                   placeholder={field.label}
                   value={formData[field.name]}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 text-gray-700 bg-gray-100 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full pl-10 pr-4 py-3 text-gray-700 bg-gray-100  rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   required
                 />
                 {errors[field.name] && (
@@ -155,7 +155,7 @@ export default function ContactForm() {
                 value={formData.message}
                 onChange={handleChange}
                 rows="4"
-                className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-4 py-3 text-gray-700 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 required
               ></textarea>
               {errors.message && (

@@ -118,10 +118,10 @@ export default function ContactForm() {
           className="h-full w-full"
         />
       </div>
-      <div className="w-full h-auto md:w-1/2 flex items-center justify-center p-8 overflow-hidden">
-        <div className="w-full rounded-3xl p-8">
+      <div className="w-full h-auto md:w-1/2 flex items-center justify-center p-4 sm:p-8 overflow-hidden">
+        <div className="w-full max-w-md rounded-3xl p-1 pt-16 sm:p-2 sm:pt-4">
           <h1 className="text-4xl font-extrabold mb-8 text-indigo-800 text-center">
-            ¿Tienes dudas o preguntas?
+            ¡Trabaja con nosotros!
           </h1>
           {alert.message && (
             <div
