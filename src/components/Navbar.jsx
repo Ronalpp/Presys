@@ -45,11 +45,12 @@ export default function Navbar() {
       } text-white flex justify-between items-center lg:px-[2%]`}
     >
       <a href="/">
-        <div className="h-full flex items-center gap-2 px-4">
-          <img src={presys} className="w-12" />
-          <h4 className={"font-black text-2xl uppercase "}>
-            Practical English System
-          </h4>
+        <div className="h-full flex items-center gap-1 px-4">
+          <img src={presys} className="w-10" />
+          <span className=" font-black  sm:text-2xl leading-3 uppercase flex flex-col sm:flex-row gap-2">
+            <h1>Practical English</h1>
+            <h1 className="text-center">System</h1>
+          </span>
         </div>
       </a>
 
