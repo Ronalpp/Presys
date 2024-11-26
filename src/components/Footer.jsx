@@ -1,10 +1,7 @@
-import React from "react";
-import { Instagram, Phone, Mail, MapPin } from "lucide-react";
+import { Instagram, Youtube, Phone, Mail, MapPin } from "lucide-react";
 import logo from "../assets/presys.png";
 
 export default function Footer() {
-  const socialLinks = [{ icon: Instagram, href: "/", name: "Instagram" }];
-
   const contactInfo = [
     {
       icon: Phone,
@@ -50,7 +47,7 @@ export default function Footer() {
             <h4 className="mb-6 text-lg font-semibold items-start text-white">
               Síguenos en:
             </h4>
-            <div className="flex flex-row justify-center items-center space-x-4 mb-6">
+            <div className="flex flex-row justify-center items-center space-x-4 mb-6 gap-4">
               <a
                 href="https://www.instagram.com/practicalenglishsystem/"
                 target="_blank"
@@ -59,6 +56,15 @@ export default function Footer() {
                 aria-label="Síguenos en Instagram"
               >
                 <Instagram className="h-7 w-7 text-white group-hover:text-blue-900 transition-colors duration-300" />
+              </a>
+              <a
+                href="https://www.youtube.com/@practicalenglishsystem"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center w-12 h-12 rounded-full bg-white bg-opacity-20 transition-all duration-300 hover:bg-opacity-100 hover:scale-110"
+                aria-label="Síguenos en Youtube"
+              >
+                <Youtube className="h-7 w-7 text-white group-hover:text-blue-900 transition-colors duration-300" />
               </a>
             </div>
             <div className="flex items-center justify-center text-center max-w-xs">
