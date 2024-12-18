@@ -1,15 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { learningData } from "../constants/db/Data";
 import { motion } from "framer-motion";
-import {
-  ChevronDown,
-  ChevronUp,
-  Book,
-  MessageSquare,
-  Pencil,
-} from "lucide-react";
+import { Book, MessageSquare, Pencil } from "lucide-react";
 
 const iconMap = {
   Skills: MessageSquare,
@@ -106,22 +100,6 @@ const ContentSection = ({ description, bulletPoints }) => {
           ))}
         </ul>
       </motion.div>
-      <motion.button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className="mt-8 flex items-center justify-center w-full py-3 px-6 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300 text-lg font-semibold"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        {isExpanded ? (
-          <>
-            Show Less <ChevronUp className="ml-2" />
-          </>
-        ) : (
-          <>
-            Read More <ChevronDown className="ml-2" />
-          </>
-        )}
-      </motion.button>
     </motion.section>
   );
 };

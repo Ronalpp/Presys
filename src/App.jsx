@@ -7,6 +7,7 @@ import Teacher from "./pages/Teacher";
 import InfoDetails from "./pages/InfoDetails";
 import InfoCourse from "./pages/InfoCourse";
 import Inscription from "./pages/Inscription";
+import InfoWork from "./pages/InfoWork";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/teacher" element={<Teacher />} />
         <Route path="/:slug" element={<InfoDetails />} />
         <Route path="/info/:slug" element={<InfoCourse />} />
+        <Route path="/work/:slug" element={<InfoWork />} />
         <Route path="/inscriptions" element={<Inscription />} />
       </Routes>
     </BrowserRouter>

@@ -1,11 +1,4 @@
-import {
-  Pencil,
-  MessageSquare,
-  Coffee,
-  Book,
-  Users,
-  Monitor,
-} from "lucide-react";
+import { Pencil, MessageSquare, Book } from "lucide-react";
 
 export const learningData = [
   {
