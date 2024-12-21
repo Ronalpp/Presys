@@ -62,9 +62,11 @@ export default function Leves() {
         </div>
 
         <div className="mt-16 text-center">
-          <button className="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-            Start Your Journey Now
-          </button>
+          <a href="/inscriptions">
+            <button className="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+              Start Your Journey Now
+            </button>
+          </a>
         </div>
       </div>
     </div>

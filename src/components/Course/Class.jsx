@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 const FeatureItem = ({ text }) => (
@@ -90,7 +89,7 @@ const CourseFeatures = () => {
           </div>
         </motion.div>
       ))}
-      
+
       <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-indigo-200 to-transparent"></div>
     </div>
   );
