@@ -1,12 +1,12 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
+import image14 from "../../assets/IMG-20250521-WA0014.jpg";
 
 const MotionSection = ({ children, delay = 0 }) => (
   <motion.section
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, delay }}
-    className="py-20"
+    className="py-10 sm:py-16 md:py-20"
   >
     {children}
   </motion.section>
@@ -15,33 +15,22 @@ const MotionSection = ({ children, delay = 0 }) => (
 export default function Main() {
   return (
     <>
-      <div className="w-full h-[50vh] md:h-[70vh]  lg:h-[80vh] sm:h-[80vh] bg-gray-100 flex flex-col justify-center items-center relative overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          className="absolute top-0 left-0 w-full h-full object-cover"
-        >
-          <source
-            src="
-https://firebasestorage.googleapis.com/v0/b/pepe-cd754.appspot.com/o/2024-10-24%2018-29-16.mp4?alt=media&token=16e34619-97ae-479c-945c-3ff60f898e60"
-            type="video/mp4"
-          />
-          Tu navegador no soporta el video.
-        </video>
+      <div className="w-full h-[40vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] flex flex-col justify-center items-center  overflow-hidden relative">
+       <img src={image14} alt="image14" className="w-full h-full object-cover object-center absolute top-0 left-0" />
+        <div className="w-full h-full bg-black/60 absolute top-0 left-0"></div>
 
         <MotionSection>
           <div
             id="home"
-            className="relative z-10 container mx-auto px-6 pt-32 pb-20 text-center md:pt-40"
+            className="relative z-10 w-full max-w-3xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 md:pt-32 pb-10 sm:pb-16 text-center"
           >
             <motion.h1
-              className="text-4xl font-extrabold text-white md:text-6xl mb-6 "
+              className="text-3xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              Domina el inglés <br />
+              Domina el inglés, <br className="hidden xs:block" />
               abre puertas al mundo
             </motion.h1>
             <motion.div
@@ -51,7 +40,7 @@ https://firebasestorage.googleapis.com/v0/b/pepe-cd754.appspot.com/o/2024-10-24%
             >
               <a
                 href="/inscriptions"
-                className="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-500 transition duration-300 text-lg"
+                className="bg-blue-600 text-white font-bold py-3 px-6 sm:px-8 rounded-full hover:bg-blue-500 transition duration-300 text-base sm:text-lg"
               >
                 ¡Inscríbete ya!
               </a>

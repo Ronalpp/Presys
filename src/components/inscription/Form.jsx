@@ -112,7 +112,7 @@ export default function ContactForm() {
       </div>
       <div className="w-full lg:w-1/2 flex items-center justify-center p-4 sm:p-8 overflow-y-auto">
         <div className="w-full max-w-md rounded-3xl p-1 pt-16 sm:p-2 sm:pt-12">
-          <h1 className="text-3xl sm:text-4xl font-extrabold mb-6 sm:mb-8 text-indigo-800 text-center">
+          <h1 className="text-3xl sm:text-4xl font-extrabold mb-6 sm:mb-8 text-blue-800 text-center">
             ¡Inscríbete ya!
           </h1>
           {alert.message && (
@@ -205,7 +205,7 @@ export default function ContactForm() {
               placeholder="Déjenos aquí cualquier comentario que considere necesario con relación a los horarios disponibles o a su situación en particular."
               value={formData.comments}
               onChange={handleChange}
-              className="w-full p-4 text-gray-700 bg-gray-100 border-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300"
+              className="w-full p-4 text-gray-700 bg-gray-100 border-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
               rows="4"
             />
             {errors.comments && (
@@ -217,9 +217,9 @@ export default function ContactForm() {
                 disabled={isLoading}
                 className={`${
                   isLoading
-                    ? "bg-indigo-400"
-                    : "bg-indigo-600 hover:bg-indigo-700"
-                } text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 flex items-center justify-center w-full`}
+                    ? "bg-blue-400"
+                    : "bg-blue-600 hover:bg-blue-700"
+                } text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 flex items-center justify-center w-full`}
               >
                 {isLoading ? (
                   "Enviando..."
@@ -242,7 +242,7 @@ function InputField({ type, name, label, value, onChange, error, icon }) {
   return (
     <div className="relative">
       {icon && (
-        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-indigo-500">
+        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-blue-500">
           {icon}
         </div>
       )}
@@ -255,7 +255,7 @@ function InputField({ type, name, label, value, onChange, error, icon }) {
         onChange={onChange}
         className={`w-full ${
           icon ? "pl-10" : "pl-4"
-        } pr-4 py-3 text-gray-700 bg-gray-100 border-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300`}
+        } pr-4 py-3 text-gray-700 bg-gray-100 border-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300`}
         required
       />
       {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
@@ -271,7 +271,7 @@ function SelectField({ name, label, options, value, onChange, error }) {
         name={name}
         value={value}
         onChange={onChange}
-        className="w-full pl-4 pr-4 py-3 text-gray-700 bg-gray-100 border-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300"
+        className="w-full pl-4 pr-4 py-3 text-gray-700 bg-gray-100 border-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
         required
       >
         <option value="">{label}</option>

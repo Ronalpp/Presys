@@ -1,4 +1,3 @@
-import React from "react";
 import { AirVent, Tv, FileVideo, Wifi } from "lucide-react";
 
 export default function FacilitiesShowcase() {
@@ -26,11 +25,11 @@ export default function FacilitiesShowcase() {
   ];
 
   return (
-    <div className="bg-white text-blue-900 px-4 sm:px-6 lg:px-8 py-16 relative overflow-hidden">
+    <div className="bg-white h-auto text-blue-900 px-4 sm:px-6 lg:px-8 py-16 relative overflow-hidden">
       
       <div className="relative z-10 max-w-7xl mx-auto">
         <h2 className="text-5xl font-black text-center mb-16">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-600">
             Contamos con:
           </span>
         </h2>
@@ -54,7 +53,6 @@ export default function FacilitiesShowcase() {
         </div>
       </div>
       
-      <div className="absolute bottom-0 left-0 w-full h-1/3 opacity-50"></div>
     </div>
   );
 }

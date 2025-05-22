@@ -7,8 +7,8 @@ const FeatureItem = ({ text }) => (
     whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.5 }}
   >
-    <span className="text-blue-500 mr-4 text-2xl transition-transform duration-300 group-hover:scale-125">•</span>
-    <span className="text-gray-700 group-hover:text-blue-600 transition-colors duration-300">{text}</span>
+    <span className="text-white mr-4 text-2xl transition-transform duration-300 group-hover:scale-125">•</span>
+    <span className="text-white group-hover:text-gray-300 transition-colors duration-300">{text}</span>
   </motion.li>
 );
 
@@ -20,7 +20,7 @@ const ImageSection = ({ imageSrc, imageAlt }) => (
     transition={{ duration: 0.5 }}
   >
     <div className="relative group">
-      <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl blur-lg opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+      <div className="absolute -inset-4 bg-gradient-to-r rounded-xl blur-lg opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
       <img
         src={imageSrc}
         alt={imageAlt}
@@ -36,7 +36,7 @@ const CourseFeatures = () => {
       title: "NUESTRO MODELO DE ENSEÑANZA",
       ventajas: [
         "Utilizamos software de aprendizaje interactivo diseñado para mejorar la experiencia educativa.",
-        "Proveemos acceso a libros digitales actualizados para reforzar el contenido de las clases.",
+        "Proveemos acceso a libros digitales y fisicos actualizados para reforzar el contenido de las clases.",
         "Integramos herramientas como Kahoot para hacer que el aprendizaje sea dinámico y divertido.",
         "Ofrecemos clases prácticas enfocadas en mejorar las habilidades de escucha, habla, lectura y escritura.",
         "Nuestros materiales están adaptados para todos los niveles, desde principiante hasta avanzado."
@@ -59,8 +59,8 @@ const CourseFeatures = () => {
   ];
 
   return (
-    <div className="py-16 relative overflow-hidden bg-gradient-to-b from-white to-blue-100">
-      <div className="absolute inset-0 bg-white opacity-30 transform -skew-y-12"></div>
+    <div className="py-16 relative overflow-hidden bg-blue-900 text-white font-sans">
+      <div className="absolute inset-0  opacity-30 transform -skew-y-12"></div>
       {sections.map((section, index) => (
         <motion.div
           key={index}
@@ -72,7 +72,7 @@ const CourseFeatures = () => {
           <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}>
             <div className="lg:w-1/2">
               <motion.h2
-                className="text-4xl font-black mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600"
+                className="text-4xl font-black mb-8 text-transparent text-white"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
@@ -90,7 +90,6 @@ const CourseFeatures = () => {
         </motion.div>
       ))}
 
-      <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-indigo-200 to-transparent"></div>
     </div>
   );
 };

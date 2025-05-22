@@ -15,7 +15,7 @@ export default function Main() {
   return (
     <>
       <div
-        className="w-full h-[50vh] md:h-[70vh]  lg:h-[80vh] sm:h-[80vh] bg-gray-100 flex flex-col"
+        className="w-full h-[30vh] md:h-[70vh]  lg:h-[80vh] sm:h-[80vh] bg-gray-100 flex flex-col"
         style={{
           backgroundImage:
             'url("https://elcomercio.pe/resizer/8IFfNwYUBvXeiGKAthwJpwVbpkU=/980x528/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/UI7DZEAMURHMVF5RTIRM4YJKPM.jpg")',
@@ -27,8 +27,8 @@ export default function Main() {
           <div className="w-full h-full bg-cover bg-center  relative">
             <div className="absolute inset-0  bg-black bg-opacity-40 backdrop-blur-[2px] flex items-center justify-center ">
               <div className="text-center text-white px-4 reveal-bottom pt-16">
-                <h1 className="text-[14vw] sm:text-[5vw]  leading-tight text-center font-bold">
-                  Practical English System
+                <h1 className="text-[12vw] sm:text-[5vw]  leading-tight text-center font-bold">
+               ¡Conócenos!
                 </h1>
               </div>
             </div>

@@ -9,7 +9,7 @@ const HeroSection = ({ title, backgroundImage }) => (
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ duration: 0.8 }}
-    className="relative h-[60vh] md:h-[80vh] overflow-hidden"
+    className="relative h-[30vh] md:h-[80vh] overflow-hidden"
   >
     <motion.div
       initial={{ scale: 1.2 }}
@@ -34,7 +34,7 @@ const HeroSection = ({ title, backgroundImage }) => (
   </motion.section>
 );
 
-const ContentSection = ({ description }) => {
+const ContentSection = ({ about, question }) => {
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
@@ -48,7 +48,9 @@ const ContentSection = ({ description }) => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
       >
-        {description}
+        <h2 className="text-4xl font-bold mb-8 text-blue-800 ">{question}</h2>
+
+        {about}
       </motion.p>
       <motion.div
         initial={{ height: 0 }}
@@ -78,7 +80,9 @@ export default function InfoWork() {
       <Navbar />
       <main>
         <HeroSection title={section?.title} backgroundImage={section?.image} />
-        <ContentSection description={section?.description} />
+        <ContentSection 
+        question={section?.question}
+        about={section?.about} />
       </main>
     </div>
   );

@@ -6,12 +6,13 @@ export default function Component() {
   return (
     <div className="bg-white w-auto p-8 font-sans">
       <motion.h2
-        className="text-5xl font-bold text-center mb-12 text-indigo-800"
+        className="text-5xl font-bold text-center mb-12 text-blue-800"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Discover Our Popular Online Courses
+                Descubre Nuestros Cursos 
+
       </motion.h2>
 
       <motion.div
@@ -39,7 +40,7 @@ export default function Component() {
             <h3 className="text-2xl font-semibold mb-3">{course.title}</h3>
             <p className="mb-4">{course.description}</p>
             <motion.button
-              className="mt-auto bg-white text-indigo-600 px-4 py-2 rounded-full font-semibold flex items-center transition-all duration-300 ease-in-out hover:bg-indigo-600 hover:text-white"
+              className="mt-auto bg-white text-blue-600 px-4 py-2 rounded-full font-semibold flex items-center transition-all duration-300 ease-in-out hover:bg-blue-600 hover:text-white"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

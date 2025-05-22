@@ -4,7 +4,7 @@ import { features } from "../../constants/db/work";
 
 export default function Work() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-900 to-indigo-800 text-white py-16 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-gradient-to-br from-blue-900 to-blue-800 text-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.h1
           className="text-4xl md:text-5xl font-extrabold text-center mb-8"
@@ -12,7 +12,7 @@ export default function Work() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Elevate Your English Skills
+          Eleva tus habilidades en inglés
         </motion.h1>
         <motion.p
           className="text-xl text-center mb-12 max-w-3xl mx-auto"
@@ -20,8 +20,7 @@ export default function Work() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Embark on a journey to English fluency with our comprehensive tools
-          and resources.
+          Emprende un viaje hacia la fluidez en inglés con nuestras herramientas y recursos integrales.
         </motion.p>
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -43,7 +42,7 @@ export default function Work() {
                 whileHover={{ x: 5 }}
               >
                 <a href={`/work/${feature.slug}`} className="flex items-center">
-                  Learn More <ArrowRight className="ml-2 w-5 h-5" />
+                  Saber más <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
               </motion.button>
             </motion.div>
@@ -57,11 +56,10 @@ export default function Work() {
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <h2 className="text-3xl font-bold mb-4">
-            Ready to start your English journey?
+            ¿Listo para comenzar tu viaje en el inglés?
           </h2>
           <p className="text-xl mb-8">
-            Take our free assessment test and get a personalized learning plan
-            today!
+            ¡Haz nuestra prueba de nivel y empieza a aprender!
           </p>
           <a href="/inscriptions">
             <motion.button
@@ -72,7 +70,8 @@ export default function Work() {
               }}
               whileTap={{ scale: 0.95 }}
             >
-              Start Free Assessment
+              ¡Inscríbete ya!
+              
             </motion.button>
           </a>
         </motion.div>

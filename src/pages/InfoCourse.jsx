@@ -9,7 +9,7 @@ const HeroSection = ({ title, backgroundImage }) => (
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ duration: 0.8 }}
-    className="relative h-[60vh] md:h-[80vh] overflow-hidden"
+    className="relative h-[30vh] md:h-[80vh] overflow-hidden"
   >
     <motion.div
       initial={{ scale: 1.2 }}
@@ -34,7 +34,34 @@ const HeroSection = ({ title, backgroundImage }) => (
   </motion.section>
 );
 
-const ContentSection = ({ description }) => {
+const LearnPoint = ({ text, index }) => (
+  <motion.li
+    initial={{ opacity: 0, x: -20 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.5, delay: index * 0.1 }}
+    className="flex items-start mb-6"
+  >
+    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-500 flex items-center justify-center mr-4">
+      <svg
+        className="w-4 h-4 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M5 13l4 4L19 7"
+        ></path>
+      </svg>
+    </div>
+    <p className="text-lg text-gray-700">{text}</p>
+  </motion.li>
+);
+
+const ContentSection = ({ about, learnPoints, question }) => {
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
@@ -48,15 +75,17 @@ const ContentSection = ({ description }) => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
       >
-        {description}
+        <h2 className="text-4xl font-bold mb-8 text-blue-800 ">{question}</h2>
+        {about}
       </motion.p>
-      <motion.div
-        initial={{ height: 0 }}
-        transition={{ duration: 0.5 }}
-        className="overflow-hidden"
-      >
-        <h2 className="text-3xl font-bold mb-8 text-gray-800">Key Points:</h2>
-      </motion.div>
+      <div>
+        <h2 className="text-3xl font-bold mb-8 text-gray-800">Puntos Clave:</h2>
+        <ul className="space-y-4">
+          {learnPoints.map((point, index) => (
+            <LearnPoint key={index} text={point} index={index} />
+          ))}
+        </ul>
+      </div>
     </motion.section>
   );
 };
@@ -73,12 +102,32 @@ export default function InfoCourse() {
 
   console.log(section);
 
+  if (!section) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-2xl font-bold text-gray-700 p-8 rounded-lg"
+        >
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto mb-4"></div>
+          Cargando...
+        </motion.div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
       <main>
         <HeroSection title={section?.title} backgroundImage={section?.image} />
-        <ContentSection description={section?.description} />
+        <ContentSection
+          about={section.about}
+          learnPoints={section.learnPoints}
+          question={section.question}
+        />
       </main>
     </div>
   );

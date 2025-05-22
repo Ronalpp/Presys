@@ -30,7 +30,7 @@ export default function Navbar() {
       <a href="/">
         <div className="h-full flex items-center gap-2 px-4">
           <img src={presys} className="w-10" />
-          <h4 className={"font-black text-2xl uppercase "}>
+          <h4 className={"font-black text-xl uppercase "}>
             {" "}
             Practical English System
           </h4>

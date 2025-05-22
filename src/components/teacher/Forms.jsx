@@ -120,7 +120,7 @@ export default function ContactForm() {
       </div>
       <div className="w-full h-auto md:w-1/2 flex items-center justify-center p-4 sm:p-8 overflow-hidden">
         <div className="w-full max-w-md rounded-3xl p-1 pt-16 sm:p-2 sm:pt-4">
-          <h1 className="text-4xl font-extrabold mb-8 text-indigo-800 text-center">
+          <h1 className="text-4xl font-extrabold mb-8 text-blue-800 text-center">
             ¡Trabaja con nosotros!
           </h1>
           {alert.message && (
@@ -160,7 +160,7 @@ export default function ContactForm() {
               },
             ].map((field) => (
               <div key={field.name} className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-indigo-500">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-blue-500">
                   {field.icon}
                 </div>
                 <input
@@ -170,7 +170,7 @@ export default function ContactForm() {
                   placeholder={field.label}
                   value={formData[field.name]}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 text-gray-700 bg-gray-100 border-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300"
+                  className="w-full pl-10 pr-4 py-3 text-gray-700 bg-gray-100 border-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                   required
                 />
                 {errors[field.name] && (
@@ -188,7 +188,7 @@ export default function ContactForm() {
                 value={formData.message}
                 onChange={handleChange}
                 rows="4"
-                className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300"
+                className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                 required
               ></textarea>
               {errors.message && (
@@ -210,7 +210,7 @@ export default function ContactForm() {
               <div
                 className={`group relative flex items-center justify-center w-full p-4 text-center border-2 border-dashed rounded-lg cursor-pointer transition-all duration-300 ease-in-out ${
                   dragActive
-                    ? "border-indigo-500 bg-indigo-50"
+                    ? "border-blue-500 bg-blue-50"
                     : "border-gray-300 hover:bg-gray-50"
                 }`}
                 onDragEnter={handleDrag}
@@ -220,8 +220,8 @@ export default function ContactForm() {
                 onClick={() => fileInputRef.current.click()}
               >
                 <div>
-                  <FaFileUpload className="mx-auto w-8 h-8 text-gray-400 group-hover:text-indigo-500 mb-2 transition-colors duration-300" />
-                  <p className="text-sm font-medium text-gray-700 group-hover:text-indigo-500 transition-colors duration-300">
+                  <FaFileUpload className="mx-auto w-8 h-8 text-gray-400 group-hover:text-blue-500 mb-2 transition-colors duration-300" />
+                  <p className="text-sm font-medium text-gray-700 group-hover:text-blue-500 transition-colors duration-300">
                     {formData.cv
                       ? formData.cv.name
                       : "Arrastra tu CV (PDF o DOCX) o haz clic"}
@@ -239,9 +239,9 @@ export default function ContactForm() {
                 disabled={isLoading}
                 className={`${
                   isLoading
-                    ? "bg-indigo-400"
-                    : "bg-indigo-600 hover:bg-indigo-700"
-                } text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 flex items-center justify-center w-full`}
+                    ? "bg-blue-400"
+                    : "bg-blue-600 hover:bg-blue-700"
+                } text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 flex items-center justify-center w-full`}
               >
                 {isLoading ? (
                   "Enviando..."

@@ -1,57 +1,84 @@
 import { Pencil, MessageSquare, Book } from "lucide-react";
+import image11 from "../../assets/IMG-20250521-WA0011.jpg";
+import image12 from "../../assets/IMG-20250521-WA0012.jpg";
+import image21 from "../../assets/IMG-20250521-WA0021.jpg";
 
 export const learningData = [
   {
     id: 1,
-    title: "Skills",
+    title: "Habilidades",
     description:
-      "Develop your reading, writing, listening and speaking skills to improve your language in real-life situations. Practice your listening and speaking skills with audio and video to practise your listening and speaking skills. Interactive exercises to help you remember new language. Texts on your reading skills in real-world contexts and understand more.",
-    image:
-      "https://images.pexels.com/photos/8926552/pexels-photo-8926552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "Mejora tus habilidades de lectura, escritura, escucha y conversación para desenvolverte en situaciones reales. Practica con audios, videos y ejercicios interactivos que te ayudarán a desarrollar tu comprensión y fluidez de manera efectiva.",
+    image: image11,
     icon: <MessageSquare className="w-6 h-6" />,
-
     bulletPoints: [
-      "Audio and video to practise your listening and speaking skills",
-      "Interactive exercises to help you remember new language",
-      "Texts on your reading skills in real-world contexts and understand more",
+      "Audio y video para practicar tus habilidades de escucha y habla",
+      "Ejercicios interactivos para ayudarte a recordar nuevo vocabulario",
+      "Textos que mejoran tu comprensión lectora en contextos reales",
     ],
     slug: "skills",
-
-    subTitle: "Que son las skills?",
-
-    subicons: "",
-
-    definition:
-      "Lorem ipsum odor amet, consectetuer adipiscing elit. Elit libero tempus est vulputate fringilla senectus class. Turpis varius sit tristique, conubia conubia mollis. Praesent conubia accumsan cras, metus mollis sagittis. Montes arcu non mi maximus facilisis lobortis posuere ultrices. Mus volutpat nibh commodo, sem congue dis tortor. Laoreet molestie tortor nibh praesent; porttitor sagittis. Himenaeos accumsan porta fringilla parturient praesent sagittis. Nunc purus pellentesque diam duis at neque. Dictumst porttitor rutrum ligula nunc a augue odio. Metus per ut vivamus viverra, lectus ad lectus lacus orci. At torquent montes mus himenaeos efficitur. Bibendum vehicula lacinia montes laoreet luctus lacus gravida fames. Vel penatibus elementum id penatibus urna dignissim ac dui donec. In dignissim maecenas dapibus sociosqu ac aliquam placerat dui. Vulputate ligula curabitur quisque morbi egestas maecenas diam. Tellus facilisi blandit donec ex sagittis vehicula tristique. Semper duis montes in suscipit imperdiet habitasse ridiculus aptent. Magnis sagittis vitae felis senectus consectetur nulla. Felis dolor accumsan mollis semper hendrerit. Pellentesque vehicula class rutrum mi; donec tempus montes neque cras. Donec eu nibh tellus gravida maecenas leo pretium orci. Tempor non iaculis diam habitasse quam euismod ligula rutrum rhoncus. Nascetur ex justo tortor condimentum ipsum risus. Fusce velit mattis aliquet mi magna quisque blandit. Fames lectus proin justo eleifend donec iaculis, hendrerit habitasse. Ac justo sodales volutpat eros parturient volutpat velit sociosqu per. Adipiscing parturient condimentum fusce vulputate nisl nisi duis. Ornare bibendum dolor litora nunc diam hac semper volutpat. Tortor auctor ac ex ad venenatis. Cursus mi neque placerat id quisque orci efficitur montes. Tristique efficitur conubia quam quam nec in non tristique pharetra. Ac torquent hendrerit faucibus ornare parturient. Id molestie mi facilisi in volutpat cubilia pharetra metus. Posuere fames vulputate montes porttitor nostra nibh. Malesuada posuere nisl porttitor eleifend fringilla sapien nostra cursus inceptos.",
+    subTitle: "¿Qué son las skills?",
+    question: "¿Qué habilidades obtendré?",
+    about: [
+      "Con este módulo obtendrás la habilidad de participar en conversaciones espontáneas con fluidez y naturalidad, adaptándote a distintos registros y contextos sociales.",
+      "Desarrollarás la capacidad de comprender audios y videos de hablantes nativos, distinguiendo acentos y matices, lo que te permitirá seguir películas, conferencias y entrevistas sin dificultad.",
+      "Mejorarás tu expresión escrita y comprensión lectora, redactando correos, informes y documentos con claridad, así como interpretando textos complejos en contextos profesionales y académicos."
+    ],
+    learnPoints: [
+      "Comunicación espontánea en distintos registros y situaciones reales",
+      "Comprensión de acentos y matices en audios y videos nativos",
+      "Expresión escrita clara para correos, informes y documentos profesionales"
+    ],
   },
   {
     id: 2,
-    title: "Grammar",
+    title: "Gramatica",
     description:
-      "Revise and practise your grammar to improve your language level and increase your confidence.",
-    image:
-      "https://images.pexels.com/photos/6408282/pexels-photo-6408282.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "Revisa y practica tu gramática para mejorar tu nivel de inglés y aumentar tu confianza al comunicarte.",
+    image: image12,
     icon: <Pencil className="w-6 h-6" />,
     bulletPoints: [
-      "Clear and simple grammar explanations to help you revise and practise different grammar points.",
-      "Online exercises to help you check your understanding of the grammar points.",
-      "Use the grammar reference for further practice and more detailed explanations.",
+      "Explicaciones claras y simples para ayudarte a repasar diferentes temas gramaticales",
+      "Ejercicios online para comprobar tu comprensión de la gramática",
+      "Referencia gramatical para practicar más a fondo y resolver dudas",
     ],
     slug: "grammar",
+    question: "¿Qué conocimientos de gramática adquiriré?",
+    about: [
+      "Con este módulo dominarás la construcción de oraciones complejas, usando correctamente tiempos verbales, voz pasiva y estructuras condicionales para expresar ideas con precisión.",
+      "Adquirirás la habilidad de seleccionar preposiciones y conectores adecuados, logrando coherencia y cohesión en tus textos escritos y discursos orales.",
+      "Refinarás tu conocimiento gramatical para evitar errores comunes, incrementando tu credibilidad y confianza al redactar correos, presentar informes y participar en debates."
+    ],
+    learnPoints: [
+      "Construcción de oraciones complejas con tiempos verbales y estructuras avanzadas",
+      "Uso preciso de preposiciones y conectores para coherencia textual",
+      "Reducción de errores gramaticales en comunicación escrita y oral"
+    ],
   },
   {
     id: 3,
-    title: "Vocabulary",
+    title: "Vocabulario",
     description:
-      "Learn new words and phrases to improve your language level and communicate more effectively.",
+      "Aprende nuevas palabras y frases para mejorar tu nivel de inglés y comunicarte con mayor eficacia.",
     image:
-      "https://images.pexels.com/photos/5676744/pexels-photo-5676744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  image21,
     icon: <Book className="w-6 h-6" />,
     bulletPoints: [
-      "Online activities to help you learn the meaning, pronunciation and spelling of new words",
-      "Learn words and phrases in a wide range of different topics",
-      "Use the vocabulary reference to find definitions and example sentences for new vocabulary",
+      "Actividades online para aprender el significado, pronunciación y escritura de nuevas palabras",
+      "Vocabulario en una gran variedad de temas y contextos",
+      "Referencia de vocabulario con definiciones y ejemplos",
     ],
     slug: "vocabulary",
+    question: "¿Qué tipo de vocabulario aprenderé?",
+    about: [
+      "Con este módulo ampliarás tu repertorio de palabras y expresiones especializadas en áreas como negocios, tecnología, salud y viajes, mejorando tu versatilidad comunicativa.",
+      "Desarrollarás fluidez al incorporar phrasal verbs y colocaciones frecuentes, lo que te ayudará a sonar más natural y seguro en el habla cotidiana y profesional.",
+      "Potenciarás tu capacidad para entender y producir textos complejos, enriqueciendo tus conversaciones y escritos con vocabulario preciso y contextualizado."
+    ],
+    learnPoints: [
+      "Repertorio de vocabulario especializado por temáticas relevantes",
+      "Uso natural de phrasal verbs y colocaciones comunes",
+      "Expresión más rica y precisa en conversaciones y textos escritos"
+    ],
   },
 ];

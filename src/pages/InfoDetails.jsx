@@ -16,7 +16,7 @@ const HeroSection = ({ title, backgroundImage, icon: Icon }) => (
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ duration: 0.8 }}
-    className="relative h-[60vh] md:h-[80vh] overflow-hidden"
+    className="relative h-[30vh] md:h-[80vh] overflow-hidden"
   >
     <motion.div
       initial={{ scale: 1.2 }}
@@ -25,7 +25,7 @@ const HeroSection = ({ title, backgroundImage, icon: Icon }) => (
       className="absolute inset-0 bg-cover bg-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     />
-    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70" />
+    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-80" />
     <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
       <motion.div
         initial={{ y: -50, opacity: 0 }}
@@ -33,7 +33,7 @@ const HeroSection = ({ title, backgroundImage, icon: Icon }) => (
         transition={{ delay: 0.5, duration: 0.8 }}
         className="text-center"
       >
-        <Icon className="w-20 h-20 mb-4 mx-auto" />
+        {Icon}
         <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-wide">
           {title}
         </h1>
@@ -42,7 +42,7 @@ const HeroSection = ({ title, backgroundImage, icon: Icon }) => (
   </motion.section>
 );
 
-const BulletPoint = ({ text, index }) => (
+const LearnPoint = ({ text, index }) => (
   <motion.li
     initial={{ opacity: 0, x: -20 }}
     animate={{ opacity: 1, x: 0 }}
@@ -69,9 +69,7 @@ const BulletPoint = ({ text, index }) => (
   </motion.li>
 );
 
-const ContentSection = ({ description, bulletPoints }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
+const ContentSection = ({ about, learnPoints, question  }) => {
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
@@ -85,21 +83,17 @@ const ContentSection = ({ description, bulletPoints }) => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
       >
-        {description}
+        <h2 className="text-4xl font-bold mb-8 text-blue-800 ">{question}</h2>
+        {about}
       </motion.p>
-      <motion.div
-        initial={{ height: 0 }}
-        animate={{ height: isExpanded ? "auto" : "200px" }}
-        transition={{ duration: 0.5 }}
-        className="overflow-hidden"
-      >
-        <h2 className="text-3xl font-bold mb-8 text-gray-800">Key Points:</h2>
+      <div>
+        <h2 className="text-3xl font-bold mb-8 text-gray-800">Puntos Clave:</h2>
         <ul className="space-y-4">
-          {bulletPoints.map((point, index) => (
-            <BulletPoint key={index} text={point} index={index} />
+          {learnPoints.map((point, index) => (
+            <LearnPoint key={index} text={point} index={index} />
           ))}
         </ul>
-      </motion.div>
+      </div>
     </motion.section>
   );
 };
@@ -139,8 +133,9 @@ export default function InfoDetails() {
           icon={iconMap[section.title]}
         />
         <ContentSection
-          description={section.description}
-          bulletPoints={section.bulletPoints}
+          about={section.about}
+          learnPoints={section.learnPoints}
+          question={section.question}
         />
       </main>
     </div>
