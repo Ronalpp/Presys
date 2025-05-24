@@ -1,5 +1,8 @@
-import { a, q } from "framer-motion/client";
 import { BarChart, ClipboardCheck, Book, Globe } from "lucide-react";
+import image17 from  "../../assets/IMG-20250521-WA0017.jpg";
+import image8 from "../../assets/IMG-20250521-WA0008.jpg";
+import image20 from "../../assets/IMG-20250521-WA0020.jpg";
+import image18 from "../../assets/IMG-20250521-WA0018.jpg";
 
 export const features = [
   {
@@ -9,9 +12,8 @@ export const features = [
     description:
       "Conoce más sobre los diferentes niveles del MCER y lo que los estudiantes pueden hacer en cada uno.",
     color: "bg-blue-100 text-blue-600",
-    image:
-      "https://images.pexels.com/photos/8926552/pexels-photo-8926552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    slug: "live-cl",
+    image: image17,
+        slug: "live-cl",
     question: "¿Qué es el MCER?",
     about: [
       "El Marco Común Europeo de Referencia para las Lenguas (MCER) es un sistema estandarizado utilizado para medir la competencia lingüística en Europa y más allá.",
@@ -28,8 +30,7 @@ export const features = [
     description:
       "Obtén una indicación de tu dominio del inglés para ayudarte a elegir materiales de aprendizaje en el nivel adecuado.",
     color: "bg-green-100 text-green-600",
-    image:
-      "https://images.pexels.com/photos/8926552/pexels-photo-8926552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: image8,
     slug: "online",
     question: "¿Qué es la prueba de inglés?",
     about: [
@@ -47,9 +48,8 @@ export const features = [
     description:
       "Recibe un plan de estudio personalizado según tu nivel actual y tus objetivos de aprendizaje.",
     color: "bg-purple-100 text-purple-600",
-    image:
-      "https://images.pexels.com/photos/8926552/pexels-photo-8926552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    slug: "live",
+    image: image20,
+        slug: "live",
     question: "¿Ofrecen horarios flexibles para estudiar?",
     about: [
       "Sí, ofrecemos horarios flexibles para adaptarnos a tus necesidades. Puedes elegir el horario y la frecuencia de tus clases según tu disponibilidad.",
@@ -67,8 +67,7 @@ export const features = [
     description:
       "Participa en conversaciones reales con hablantes de inglés de todo el mundo.",
     color: "bg-yellow-100 text-yellow-600",
-    image:
-      "https://images.pexels.com/photos/8926552/pexels-photo-8926552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: image18,
     slug: "native",
     question: "¿Con quién practicaré y cómo mejorará eso mi inglés en situaciones reales?",
     about: [

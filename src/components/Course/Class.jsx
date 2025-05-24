@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import image22 from '../../assets/IMG-20250521-WA0022.jpg';	
+import image24 from '../../assets/images24.webp';
 
 const FeatureItem = ({ text }) => (
   <motion.li
@@ -41,7 +43,7 @@ const CourseFeatures = () => {
         "Ofrecemos clases prácticas enfocadas en mejorar las habilidades de escucha, habla, lectura y escritura.",
         "Nuestros materiales están adaptados para todos los niveles, desde principiante hasta avanzado."
       ],
-      imageSrc: "https://imgs.search.brave.com/tnxavLt75tEsZp0U8tow8OxKREpPkAw3spYvPWP_2nQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDg1/NzYwMzQ4L3Bob3Rv/L2xpdHRsZS1ib3kt/cG9ydHJhaXQtaW4t/dGhlLWRhcmstbWFr/aW5nLWhvcnJvci5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/cW1nZjNKa0lIRTF2/VERoVktoVVk4S3NB/b1NJQlhXNmxaMmVo/cEVzanE3Yz0",
+      imageSrc: image24,
       imageAlt: "Aula con tecnología educativa"
     },
     {
@@ -53,7 +55,7 @@ const CourseFeatures = () => {
         "Acceso a tutorías y materiales adicionales para apoyo fuera del aula.",
         "Certificación al finalizar el curso."
       ],
-      imageSrc: "https://imgs.search.brave.com/tnxavLt75tEsZp0U8tow8OxKREpPkAw3spYvPWP_2nQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDg1/NzYwMzQ4L3Bob3Rv/L2xpdHRsZS1ib3kt/cG9ydHJhaXQtaW4t/dGhlLWRhcmstbWFr/aW5nLWhvcnJvci5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/cW1nZjNKa0lIRTF2/VERoVktoVVk4S3NB/b1NJQlhXNmxaMmVo/cEVzanE3Yz0",
+      imageSrc: image22,
       imageAlt: "Estudiantes participando en una clase interactiva"
     },
   ];

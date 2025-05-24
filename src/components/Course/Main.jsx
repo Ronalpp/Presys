@@ -4,6 +4,7 @@ import {
   revealFromLeft,
   revealFromBottom,
 } from "../../constants/variants";
+import image11 from "../../assets/IMG-20250521-WA0011.jpg";
 
 export default function Main() {
   useEffect(() => {
@@ -17,8 +18,7 @@ export default function Main() {
       <div
         className="w-full h-[30vh] md:h-[70vh]  lg:h-[80vh] sm:h-[80vh] bg-gradient-to-br from-blue-50 to-blue-100  flex flex-col"
         style={{
-          backgroundImage:
-            'url("https://elcomercio.pe/resizer/8IFfNwYUBvXeiGKAthwJpwVbpkU=/980x528/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/UI7DZEAMURHMVF5RTIRM4YJKPM.jpg")',
+          backgroundImage: `url(${image11})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
