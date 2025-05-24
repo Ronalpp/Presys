@@ -1,3 +1,5 @@
+import back from "../../assets/back.jpg"
+
 export default function About() {
   return (
     <section className="w-full py-16">
@@ -45,7 +47,7 @@ export default function About() {
             <div className="relative rounded-2xl overflow-hidden shadow-xl mb-8 transform hover:scale-[1.01] transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-transparent z-10"></div>
               <img
-                src="https://imgs.search.brave.com/K0hElZUwJJI9S5zvmP6ScfZeUHkJKZ2l96Rg_v34wlE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTA0/NzY5OTQzMC9waG90/by9vdmVyaGVhZC12/aWV3LW9uLWJ1c2lu/ZXNzLXBlb3BsZS1h/cm91bmQtZGVzay5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/bXc3R0FYVEVPQVEz/NnRhR3h6bzhEUEUz/Q0xPcEc3WnU0NjZG/Q3hlUUpMMD0"
+                src={back}
                 alt="Estudiantes aprendiendo inglés en PRESYS"
                 className="w-full h-[350px] md:h-[400px] object-cover transform scale-105"
               />
